@@ -6,6 +6,60 @@ public class JavaAssistantProgram {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
+		int total = 0;
+		Scanner keyboard = new Scanner(System.in);
+		int inputOne = 0;
+		char rerun;
+		String inputTwo;
+	do {
+			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
+			inputOne = keyboard.nextInt();
+			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 12 && inputOne != 20 ) {
+				System.out.println("Please enter one of the options given: 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die ");
+				inputOne = keyboard.nextInt();
+			}
+		
+			if (inputOne == 4) {
+				FourDieRoll four = new FourDieRoll();
+				total = four.getRoll();
+				}
+			
+		
+			if (inputOne == 6) {
+				SixDieRoll six = new SixDieRoll();
+				total = six.getRoll();
+			}
+			
+			 
+			if (inputOne == 8) {
+				EightDieRoll eight = new EightDieRoll();
+				total = eight.getRoll();
+			}
+			
+
+			if (inputOne == 12) {
+				TwelveDieRoll twelve = new TwelveDieRoll();
+				total = twelve.getRoll();
+			}
+			
+		
+			if (inputOne == 20) {
+				TwentyDieRoll twenty = new TwentyDieRoll();
+				total = twenty.getRoll();
+			}
+			
+			System.out.println(total);
+			
+			keyboard.nextLine();
+			
+			System.out.println("Would you like to reroll another set of dice?");
+			System.out.println("Enter y to reroll. Any other input will return to main menu: ");
+			inputTwo = keyboard.nextLine();
+			rerun = inputTwo.charAt(0);
+	} while (rerun == 'y'|| rerun == 'Y');
+		 
+	
+		
 	
 		ArrayList<String> listPartyName = new ArrayList<String>();
 		
