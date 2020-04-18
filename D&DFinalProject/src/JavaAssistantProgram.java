@@ -7,6 +7,20 @@ public class JavaAssistantProgram {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 	
+		ArrayList<String> listPartyName = new ArrayList<String>();
+		
+		//Option B
+		InitiativeRollDice roll = new InitiativeRollDice();
+		Scanner input1 = new Scanner(System.in);
+		System.out.println("Please list all of your party members names. Type 'stop' when finished.");
+		String inputTest = input1.nextLine();
+		while (!inputTest.equalsIgnoreCase("STOP")){
+		listPartyName.add(inputTest);
+		System.out.println("What other name would you like to add?");
+		inputTest = input1.nextLine();
+		}
+		EncounterClass Fight  = new EncounterClass(listPartyName, roll);
+		System.out.println(Fight);
 		/*Option C
 		
 		*/
@@ -41,7 +55,8 @@ public class JavaAssistantProgram {
 				while (check3 == true) {
 				System.out.println("Is this correct? " + name + " Yes or No.");
 				Choice = input.nextLine();
-				if (Choice.equalsIgnoreCase("Yes")) {		
+				if (Choice.equalsIgnoreCase("Yes")) {
+				check = false;		
 				System.out.println("How many random names do you want to generate?");
 				int amount = input.nextInt() ;
 				NameGenerator test2 = new NameGenerator(amount, name, position);
