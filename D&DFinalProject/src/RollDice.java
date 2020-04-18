@@ -10,7 +10,7 @@ public class RollDice {
 		int afterRoll = 0;
 		char rerun;
 		String inputTwo;
-		do {
+	do {
 			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
 			input = keyboard.nextInt();
 			while ( input != 4 && input != 6 && input != 8 && input != 12 && input != 20 ) {
@@ -96,13 +96,16 @@ public class RollDice {
 					System.out.println(afterRoll);
 				}
 			}
+			
 			System.out.println(total);
 			
+			keyboard.nextLine();
+			
 			System.out.println("Would you like to reroll another set of dice?");
-			System.out.print("Enter y to reroll. Any other input will return to main menu: ");
+			System.out.println("Enter y to reroll. Any other input will return to main menu: ");
 			inputTwo = keyboard.nextLine();
 			rerun = inputTwo.charAt(0);
-		} while (rerun == 'y' || rerun == 'Y');
+	} while (rerun == 'y'|| rerun == 'Y');
 		 
 	}
 		
