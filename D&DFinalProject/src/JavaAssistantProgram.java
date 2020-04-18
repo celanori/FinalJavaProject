@@ -1,11 +1,45 @@
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.io.File;
+
 
 public class JavaAssistantProgram {
-
+//changing one thing to see if github is working.
 	public static void main(String[] args) throws FileNotFoundException {
+		//The other solution I was trying to suggest for the rolling dice (look at Rolldicetest Class
+		boolean rollingdice = true;
+		int count;
+		int totalSum = 0;
 		
+		String response;
+		Scanner input2 = new Scanner(System.in);
+		//Option A 
+		do {
+		RollDiceTest Sides = new RollDiceTest();
+		System.out.println("How many sides does your dice have? Then press enter twice");
+		int size = input2.nextInt();
+		System.out.println("How many " + size + " sided dice would you like to roll? Then press enter twice");
+		int amountDice = input2.nextInt();
+		System.out.println("Rolling " + amountDice + ' ' + size + " sided die.");
+		for (count=1; count<amountDice+1; count++) {
+		int Rolling = Sides.StandardDiceRoll(count);
+		System.out.println("Roll #" + count + ' ');
+		System.out.println(Rolling);
+		totalSum  += Rolling;
+		}
+		System.out.println("Total: " + totalSum);
+		System.out.println("Would you like to roll again? Yes or No.");
+		response = input2.nextLine();
+		if (response.equalsIgnoreCase("Yes")) {
+		rollingdice = false;
+		}
+		else if (response.equalsIgnoreCase("No")) {
+			rollingdice = true;
+			}
+		else {
+			System.out.println("That response is not valid.");
+		}
+		} while(rollingdice == true);
+	/*	
 		int total = 0;
 		Scanner keyboard = new Scanner(System.in);
 		int inputOne = 0;
@@ -57,10 +91,7 @@ public class JavaAssistantProgram {
 			inputTwo = keyboard.nextLine();
 			rerun = inputTwo.charAt(0);
 	} while (rerun == 'y'|| rerun == 'Y');
-		 
-	
-		
-	
+		*/ 
 		ArrayList<String> listPartyName = new ArrayList<String>();
 		
 		//Option B
