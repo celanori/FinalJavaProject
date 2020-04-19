@@ -11,7 +11,6 @@ public class EncounterClass {
 	InitiativeRollDice roll;
 	int rolled;
 	
-	
 	public EncounterClass(ArrayList<String> listNames, InitiativeRollDice roll) {
 		ArrayList<String> order = new ArrayList<String>();
 		ArrayList<Integer> rolledNumbers = new ArrayList<Integer>();

@@ -5,47 +5,16 @@ import java.util.*;
 public class JavaAssistantProgram {
 //changing one thing to see if github is working.
 	public static void main(String[] args) throws FileNotFoundException {
-		//The other solution I was trying to suggest for the rolling dice (look at Rolldicetest Class
-		boolean rollingdice = true;
-		int count;
-		int totalSum = 0;
-		
-		String response;
-		Scanner input2 = new Scanner(System.in);
-		//Option A 
-		do {
-		RollDiceTest Sides = new RollDiceTest();
-		System.out.println("How many sides does your dice have? Then press enter twice");
-		int size = input2.nextInt();
-		System.out.println("How many " + size + " sided dice would you like to roll? Then press enter twice");
-		int amountDice = input2.nextInt();
-		System.out.println("Rolling " + amountDice + ' ' + size + " sided die.");
-		for (count=1; count<amountDice+1; count++) {
-		int Rolling = Sides.StandardDiceRoll(count);
-		System.out.println("Roll #" + count + ' ');
-		System.out.println(Rolling);
-		totalSum  += Rolling;
-		}
-		System.out.println("Total: " + totalSum);
-		System.out.println("Would you like to roll again? Yes or No.");
-		response = input2.nextLine();
-		if (response.equalsIgnoreCase("Yes")) {
-		rollingdice = false;
-		}
-		else if (response.equalsIgnoreCase("No")) {
-			rollingdice = true;
-			}
-		else {
-			System.out.println("That response is not valid.");
-		}
-		} while(rollingdice == true);
-	/*	
+
+	/*
 		int total = 0;
 		Scanner keyboard = new Scanner(System.in);
-		int inputOne = 0;
-		char rerun;
+		int inputOne;
 		String inputTwo;
+		char rerun;
 	do {
+			
+			
 			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
 			inputOne = keyboard.nextInt();
 			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 12 && inputOne != 20 ) {
@@ -91,21 +60,68 @@ public class JavaAssistantProgram {
 			inputTwo = keyboard.nextLine();
 			rerun = inputTwo.charAt(0);
 	} while (rerun == 'y'|| rerun == 'Y');
-		*/ 
+	
+	*/
 		ArrayList<String> listPartyName = new ArrayList<String>();
-		
+		ArrayList<String> listEnemyName = new ArrayList<String>();
+		boolean error = true;
 		//Option B
 		InitiativeRollDice roll = new InitiativeRollDice();
 		Scanner input1 = new Scanner(System.in);
-		System.out.println("Please list all of your party members names. Type 'stop' when finished.");
-		String inputTest = input1.nextLine();
-		while (!inputTest.equalsIgnoreCase("STOP")){
-		listPartyName.add(inputTest);
-		System.out.println("What other name would you like to add?");
-		inputTest = input1.nextLine();
+		while(error == true) {
+		System.out.println("Who would you like to list first Ally or Enemy?");
+		String inputTest1 = input1.nextLine();
+		EnumVariable encounterPlayers = new EnumVariable(Team.valueOf(inputTest1.toUpperCase()));
+		String Answer = encounterPlayers.teamChoice();
+		if (Answer.equalsIgnoreCase("Enemy")){
+			error = false;
+			String inputTest = input1.nextLine();
+			while (!inputTest.equalsIgnoreCase("STOP")){
+			listEnemyName.add(inputTest);
+			
+			System.out.println("What other enemy name would you like to add?");
+			inputTest = input1.nextLine();
+			}
+			
+			System.out.println("Now add the names of your allies. Type 'STOP' to quit adding names.");
+			inputTest = input1.nextLine();
+			while (!inputTest.equalsIgnoreCase("STOP")){
+				listPartyName.add(inputTest);
+				
+				System.out.println("What other ally name would you like to add?");
+				inputTest = input1.nextLine();
+				
+				}
+			
+			
+		}
+		if (Answer.equalsIgnoreCase("Ally")){
+			error = false;
+			String inputTest = input1.nextLine();
+			while (!inputTest.equalsIgnoreCase("STOP")){
+			listPartyName.add(inputTest);
+			
+			System.out.println("What other ally name would you like to add?");
+			inputTest = input1.nextLine();
+			
+			}
+			System.out.println("Now add the names of your enemies. Type 'STOP' to quit adding names.");
+			inputTest = input1.nextLine();
+			while (!inputTest.equalsIgnoreCase("STOP")){
+				listEnemyName.add(inputTest);
+				
+				System.out.println("What other ally name would you like to add?");
+				inputTest = input1.nextLine();
+				
+		}
+		if (Answer.equalsIgnoreCase("Error")) {
+		error = true;
+		}
 		}
 		EncounterClass Fight  = new EncounterClass(listPartyName, roll);
+		EncounterClass EnemyFight  = new EncounterClass(listEnemyName, roll);
 		System.out.println(Fight);
+		System.out.println(EnemyFight);
 		/*Option C
 		
 		*/
@@ -202,4 +218,5 @@ public class JavaAssistantProgram {
 	}	
   }
 	
+}
 }
