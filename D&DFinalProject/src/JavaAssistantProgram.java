@@ -6,7 +6,7 @@ public class JavaAssistantProgram {
 //changing one thing to see if github is working.
 	public static void main(String[] args) throws FileNotFoundException {
 
-	/*
+	//Option A
 		int total = 0;
 		Scanner keyboard = new Scanner(System.in);
 		int inputOne;
@@ -17,8 +17,8 @@ public class JavaAssistantProgram {
 			
 			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
 			inputOne = keyboard.nextInt();
-			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 12 && inputOne != 20 ) {
-				System.out.println("Please enter one of the options given: 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die ");
+			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 10 && inputOne != 12 && inputOne != 20 ) {
+				System.out.println("Please enter one of the options given: 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 10 - for 10 sided die, 12 - for 12 sided die, or 20 - for 20 sided die ");
 				inputOne = keyboard.nextInt();
 			}
 		
@@ -39,6 +39,10 @@ public class JavaAssistantProgram {
 				total = eight.getRoll();
 			}
 			
+			if (inputOne == 10) {
+				TenDieRoll ten = new TenDieRoll();
+				total = ten.getRoll();
+			}
 
 			if (inputOne == 12) {
 				TwelveDieRoll twelve = new TwelveDieRoll();
@@ -61,7 +65,7 @@ public class JavaAssistantProgram {
 			rerun = inputTwo.charAt(0);
 	} while (rerun == 'y'|| rerun == 'Y');
 	
-	*/
+	
 		ArrayList<String> listPartyName = new ArrayList<String>();
 		ArrayList<String> listEnemyName = new ArrayList<String>();
 		String Answer = " ";
