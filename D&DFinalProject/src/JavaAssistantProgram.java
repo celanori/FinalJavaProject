@@ -64,15 +64,25 @@ public class JavaAssistantProgram {
 	*/
 		ArrayList<String> listPartyName = new ArrayList<String>();
 		ArrayList<String> listEnemyName = new ArrayList<String>();
-		boolean error = true;
+		String Answer = " ";
+		boolean error = false;
 		//Option B
 		InitiativeRollDice roll = new InitiativeRollDice();
 		Scanner input1 = new Scanner(System.in);
-		while(error == true) {
+		while(error == false) {
 		System.out.println("Who would you like to list first Ally or Enemy?");
 		String inputTest1 = input1.nextLine();
+		if (inputTest1.equalsIgnoreCase("Ally") || (inputTest1.equalsIgnoreCase("Enemy"))) {
 		EnumVariable encounterPlayers = new EnumVariable(Team.valueOf(inputTest1.toUpperCase()));
-		String Answer = encounterPlayers.teamChoice();
+		Answer = encounterPlayers.teamChoice();
+		error = true;
+		}
+		else {
+		System.out.println("This is an invalid input.");
+		error = false;
+		}
+		}
+		
 		if (Answer.equalsIgnoreCase("Enemy")){
 			error = false;
 			String inputTest = input1.nextLine();
@@ -114,14 +124,11 @@ public class JavaAssistantProgram {
 				inputTest = input1.nextLine();
 				
 		}
-		if (Answer.equalsIgnoreCase("Error")) {
-		error = true;
 		}
-		}
-		EncounterClass Fight  = new EncounterClass(listPartyName, roll);
-		EncounterClass EnemyFight  = new EncounterClass(listEnemyName, roll);
-		System.out.println(Fight);
-		System.out.println(EnemyFight);
+		System.out.println("This is the fighting order of your party.");
+		EncounterClass PartyFightOrder  = new EncounterClass(listPartyName, roll);
+		System.out.println("This is the fighting order of your enemies.");
+		EncounterClass EnemyFightOrder  = new EncounterClass(listEnemyName, roll);
 		/*Option C
 		
 		*/
@@ -141,7 +148,6 @@ public class JavaAssistantProgram {
 			System.out.println("How many random names do you want to generate?");
 			int amount = input.nextInt() ;
 			NameGenerator test = new NameGenerator(amount);
-			System.out.println(test);
 		} 
 		else if (value.equalsIgnoreCase("No")) {
 			check = false;
@@ -161,7 +167,6 @@ public class JavaAssistantProgram {
 				System.out.println("How many random names do you want to generate?");
 				int amount = input.nextInt() ;
 				NameGenerator test2 = new NameGenerator(amount, name, position);
-				System.out.println(test2);
 				check = false;
 				check2 = true;
 				check3 = false;
@@ -189,7 +194,6 @@ public class JavaAssistantProgram {
 				System.out.println("How many names do you want to generate?");
 				int amount = input.nextInt() ;
 				NameGenerator test2 = new NameGenerator(amount, name, position);
-				System.out.println(test2);
 				check = false;
 				check2 = true;
 				check3 = false;
@@ -218,5 +222,4 @@ public class JavaAssistantProgram {
 	}	
   }
 	
-}
 }
