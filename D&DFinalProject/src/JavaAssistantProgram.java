@@ -7,63 +7,63 @@ public class JavaAssistantProgram {
 	public static void main(String[] args) throws FileNotFoundException {
 
 	//Option A
-		int total = 0;
-		Scanner keyboard = new Scanner(System.in);
-		int inputOne;
-		String inputTwo;
-		char rerun;
-	do {
+		int total = 0; //initializing the total variable
+		Scanner keyboard = new Scanner(System.in); // create new scanner object
+		int inputOne; //initalize varibale to read keyboard first keyboard input.
+		String inputTwo; // initialize variable to read second keyboard input. 
+		char rerun; // intialize char variable to end or continue the do-while loop.
+	do {//Start of the do-while loop.
 			
 			
-			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
+			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");// ask user what kind of die they want to roll.
 			inputOne = keyboard.nextInt();
-			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 10 && inputOne != 12 && inputOne != 20 ) {
+			while ( inputOne != 4 && inputOne != 6 && inputOne != 8 && inputOne != 10 && inputOne != 12 && inputOne != 20 ) {//validate user input.
 				System.out.println("Please enter one of the options given: 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 10 - for 10 sided die, 12 - for 12 sided die, or 20 - for 20 sided die ");
 				inputOne = keyboard.nextInt();
 			}
 		
-			if (inputOne == 4) {
-				FourDieRoll four = new FourDieRoll();
-				total = four.getRoll();
+			if (inputOne == 4) {// if user input 4.
+				FourDieRoll four = new FourDieRoll();// create new fourdieroll object.
+				total = four.getRoll(); //set total to the total obtained from the object. 
 				}
 			
 		
-			if (inputOne == 6) {
-				SixDieRoll six = new SixDieRoll();
-				total = six.getRoll();
+			else if (inputOne == 6) {// if user input 6
+				SixDieRoll six = new SixDieRoll();// create new sixdieroll object.
+				total = six.getRoll();// set total to the total obtained from the object.
 			}
 			
 			 
-			if (inputOne == 8) {
-				EightDieRoll eight = new EightDieRoll();
-				total = eight.getRoll();
+			else if (inputOne == 8) {// if the user input 8.
+				EightDieRoll eight = new EightDieRoll();// create new eightdieroll object.
+				total = eight.getRoll();//set total to the total obtained from the object.
 			}
 			
-			if (inputOne == 10) {
-				TenDieRoll ten = new TenDieRoll();
-				total = ten.getRoll();
+			else if (inputOne == 10) { // if the user input 10.
+				TenDieRoll ten = new TenDieRoll();// create new tendieroll class object.
+				total = ten.getRoll();// set total to the total obtained from the object.
 			}
 
-			if (inputOne == 12) {
-				TwelveDieRoll twelve = new TwelveDieRoll();
-				total = twelve.getRoll();
+			else if (inputOne == 12) {//if the user input 12.
+				TwelveDieRoll twelve = new TwelveDieRoll();// create new twelve die roll object.
+				total = twelve.getRoll();// set total to the total obtained from the object.
 			}
 			
 		
-			if (inputOne == 20) {
-				TwentyDieRoll twenty = new TwentyDieRoll();
-				total = twenty.getRoll();
+			else {//if the user input 20.
+				TwentyDieRoll twenty = new TwentyDieRoll();// create new twentyrolldie object.
+				total = twenty.getRoll();// set total to the total obtained from the object.
 			}
 			
-			System.out.println(total);
+			System.out.println(total);//Display the end total.
 			
-			keyboard.nextLine();
+			keyboard.nextLine();// Skip a line.
 			
-			System.out.println("Would you like to reroll another set of dice?");
+			System.out.println("Would you like to reroll another set of dice?");// ask the user if they wish to continue.
 			System.out.println("Enter y to reroll. Any other input will return to main menu: ");
 			inputTwo = keyboard.nextLine();
 			rerun = inputTwo.charAt(0);
-	} while (rerun == 'y'|| rerun == 'Y');
+	} while (rerun == 'y'|| rerun == 'Y');// end of do while loop. 
 	
 	
 		ArrayList<String> listPartyName = new ArrayList<String>();
