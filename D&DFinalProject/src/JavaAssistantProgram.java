@@ -237,7 +237,7 @@ public class JavaAssistantProgram {
 					}
 				}
 				} 
-			else {// if user chose B
+			else {// if user chose D.
 				end = 1; //Set end to 1 to terminate program.
 						}
 			} while (end == 0 ); //end of do while loop.
