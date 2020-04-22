@@ -16,9 +16,10 @@ private int total = 0; // Creating and initiating total varialble.
 			numberedRoll = keyboard.nextInt();
 			}
 		Random twelveDie = new Random();// Create new random object for rolling an twelve die.
-		for (int x = 0; x < numberedRoll; x++) {// create for loop to roll as many times as the user likes.
+		for (int x = 1; x < numberedRoll + 1; x++) {// create for loop to roll as many times as the user likes.
 			afterRoll = twelveDie.nextInt(12) + 1; // setup the parameters for the random of the twelve die.
 			total += afterRoll;// add all the rolls together to get the total.
+			System.out.print("Roll # " + x + " "); //display each roll number round
 			System.out.println(afterRoll); //display each roll.
 		}
 		

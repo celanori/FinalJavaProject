@@ -16,8 +16,9 @@ public class TwentyDieRoll {
 			numberedRoll = keyboard.nextInt();
 			}
 		Random twentyDie = new Random();// Create new random object for rolling an twenty die.
-		for (int x = 0; x < numberedRoll; x++) {// create for loop to roll as many times as the user likes.
+		for (int x = 1; x < numberedRoll + 1 ; x++) {// create for loop to roll as many times as the user likes.
 			afterRoll = twentyDie.nextInt(20) + 1; // setup the parameters for the random of the twenty die.
+			System.out.print("Roll # " + x + " "); //display each roll number round
 			System.out.println(afterRoll); //display each roll.
 		}
 		
