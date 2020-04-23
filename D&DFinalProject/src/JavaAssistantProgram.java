@@ -1,9 +1,8 @@
-import java.io.FileNotFoundException;
+import java.io.FileNotFoundException; //
 import java.util.*;
 
 
 public class JavaAssistantProgram {
-//changing one thing to see if github is working.
 	public static void main(String[] args) throws FileNotFoundException {
 	boolean programRun = true;
 	Scanner keyboard = new Scanner(System.in);
