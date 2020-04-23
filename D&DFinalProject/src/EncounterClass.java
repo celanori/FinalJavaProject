@@ -17,8 +17,7 @@ public class EncounterClass {
 		ArrayList<String> initiativeFinal = new ArrayList<String>();
 		size = listNames.size();
 		for (count=0; count < (size); count++) {
-		rolled = roll.RollDice();
-		rolledNumbers.add(rolled);
+		rolledNumbers.add(InitiativeRollDice.RollDice());
 		order.add(listNames.get(count));
 		}
 		Collections.sort(rolledNumbers, Collections.reverseOrder());

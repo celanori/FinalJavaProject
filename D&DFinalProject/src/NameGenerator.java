@@ -6,8 +6,8 @@ import java.util.Random; //import random
 
 public class NameGenerator { //Creates a name generation using two premade lists
 	
-	private ArrayList<String> listFN; //private variable for first names
-	private ArrayList<String> listLN; //private variable for last names
+	public ArrayList<String> listFN = new ArrayList<String>(); //private variable for first names
+	public ArrayList<String> listLN = new ArrayList<String>(); //private variable for last names
 	private Random RNumber = new Random(); //random variable
 	private int RandNumber; // random integer
 	private int count; //counter integer
@@ -29,7 +29,7 @@ public class NameGenerator { //Creates a name generation using two premade lists
 	System.out.print(listFN.get(RandNumber) + ' ');
 	
 	//grabs a new random number 
-	RandNumber = RNumber.nextInt(4000);	
+	RandNumber = RNumber.nextInt(4900);	
 	
 	//while loop for each last name input until no next line
 	while (lastNames.hasNextLine()) {
@@ -45,7 +45,7 @@ public class NameGenerator { //Creates a name generation using two premade lists
 		
 		//start for loop
 		for (count = 0; count < amount; count++) {
-		RandNumber = RNumber.nextInt(4000);	
+		RandNumber = RNumber.nextInt(4900);	
 		
 		//adds a new name if there is a next line to ListFN
 		while (firstNames.hasNextLine()) {
