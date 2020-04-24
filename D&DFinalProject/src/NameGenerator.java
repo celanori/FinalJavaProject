@@ -40,7 +40,7 @@ public class NameGenerator { //Creates a name generation using two premade lists
 	} // for loop ends
 	} // constructor ends
 	
-	//method for if passing amount, string, and position
+	//constructor for if passing amount, string, and position
 	public NameGenerator(int amount, String name, int position) throws FileNotFoundException {
 		
 		//start for loop

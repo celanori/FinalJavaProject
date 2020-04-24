@@ -14,7 +14,7 @@ public class JavaAssistantProgram {//Main class to run program
 	int position;
 	int inputOne;
 	String Choice;
-	String name;;
+	String name;
 	String Answer = " ";
 	String mainInput;
 	String choice2;
@@ -244,7 +244,7 @@ public class JavaAssistantProgram {//Main class to run program
 				
 				//prompt input
 				System.out.println("Display your first name of your character exact way you would like it displayed.");
-				name = keyboard.nextLine() ;
+				name = keyboard.nextLine();
 				
 				//confirm
 				System.out.println("Is this correct? " + name + " Yes or No.");
