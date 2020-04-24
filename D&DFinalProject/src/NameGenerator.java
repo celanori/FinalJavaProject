@@ -19,7 +19,7 @@ public class NameGenerator { //Creates a name generation using two premade lists
 	
 	//for loop for amount which is the amount which was the passed variable
 	for (count = 0; count < amount; count++) {
-	RandNumber = RNumber.nextInt(4000);	
+	RandNumber = RNumber.nextInt(4900);	
 	
 	//while loop for each first name input until no next line
 	while (firstNames.hasNextLine()) {

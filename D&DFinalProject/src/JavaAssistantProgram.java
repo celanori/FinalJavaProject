@@ -198,9 +198,9 @@ public class JavaAssistantProgram {//Main class to run program
 		}// close ally if statement
 		
 		//prompts that this is the order of the party, the party lists and rolls associated, and returning to the main menu.
-		System.out.println("This is the current fighting order of your party.");
 		listFinalList1 = test.EncounterClassNew(listEnemyName, roll);
 		listFinalList2 = test2.EncounterClassNew(listPartyName, roll);
+		System.out.println("This is the current fighting order of your party.");
 		System.out.println(listFinalList1);
 		System.out.println("This is the current fighting order of your enemies.");
 		System.out.println(listFinalList2);
