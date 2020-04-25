@@ -28,7 +28,7 @@ public class JavaAssistantProgram {//Main class to run program
 	EncounterClass test2 = new EncounterClass();
 	
 	//while loop for the program to run
-	while (programRun == true) {
+	do{
 		
 	//introduction message
 	System.out.println();
@@ -48,7 +48,7 @@ public class JavaAssistantProgram {//Main class to run program
 	// do while loop for repetition if user wants to continue to roll dice
 	do {
 			//Prompt and user input
-			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die , 12 - for 12 sided die, or 20 - for 20 sided die");
+			System.out.println("What kind of die do you wish to roll? \n" + "Please enter 4 - for 4 sided die, 6 - for 6 sided die, 8 - for 8 sided die, 10 - for 10 sided die, 12 - for 12 sided die, or 20 - for 20 sided die");
 			inputOne = Integer.parseInt(keyboard.nextLine());
 			
 			//new while loop to validate option selection
@@ -146,7 +146,7 @@ public class JavaAssistantProgram {//Main class to run program
 			listEnemyName.add(inputTest);
 			
 			//prompts for next enemy you want to add
-			System.out.println("What other enemy name would you like to add?");
+			System.out.println("What other enemy name would you like to add? Type 'STOP' to quit adding names.");
 			inputTest = keyboard.nextLine();
 			}
 			
@@ -159,7 +159,7 @@ public class JavaAssistantProgram {//Main class to run program
 				listPartyName.add(inputTest);
 				
 				//prompts user if they would like to add another name
-				System.out.println("What other ally name would you like to add?");
+				System.out.println("What other ally name would you like to add? Type 'STOP' to quit adding names.");
 				inputTest = keyboard.nextLine();
 				} // close stop while loop
 			
@@ -176,7 +176,7 @@ public class JavaAssistantProgram {//Main class to run program
 			listPartyName.add(inputTest);
 			
 			//prompts for user ally they want to add
-			System.out.println("What other ally name would you like to add?");
+			System.out.println("What other ally name would you like to add? Type 'STOP' to quit adding names.");
 			inputTest = keyboard.nextLine();
 			
 			}
@@ -190,7 +190,7 @@ public class JavaAssistantProgram {//Main class to run program
 				listEnemyName.add(inputTest);
 				
 				//prompts user if they would like to add another name
-				System.out.println("What other enemy name would you like to add?");
+				System.out.println("What other enemy name would you like to add? Type 'STOP' to quit adding names.");
 				inputTest = keyboard.nextLine();
 				
 		}// close while loop for user stop
@@ -201,9 +201,9 @@ public class JavaAssistantProgram {//Main class to run program
 		listFinalList1 = test.EncounterClassNew(listEnemyName, roll);
 		listFinalList2 = test2.EncounterClassNew(listPartyName, roll);
 		System.out.println("This is the current fighting order of your party.");
-		System.out.println(listFinalList1);
-		System.out.println("This is the current fighting order of your enemies.");
 		System.out.println(listFinalList2);
+		System.out.println("This is the current fighting order of your enemies.");
+		System.out.println(listFinalList1);
 		System.out.println("Now returning you to the main menu...");
 		
 	}// close option B else if
@@ -322,18 +322,20 @@ public class JavaAssistantProgram {//Main class to run program
 		
 	} //end option C else if 
 	
+	//if 'quit' option
+	else if (mainInput.equalsIgnoreCase("Quit")) {
+			programRun = false; //break while loop
+			keyboard.close(); //close scanner
+			} // close if Quit statement
+	
 		//if none of the other options print that the option is not valid
 		else {
 			System.out.println("This is not a valid input, please try again.");
 		}
 	
-	//if 'quit' option
-	if (mainInput.equalsIgnoreCase("Quit")) {
-		programRun = false; //break while loop
-		keyboard.close(); //close scanner
-		} // close if Quit statement
 	
-	System.exit(0);} //close program run
+	
+	} while(programRun != false);  //close program run
 	
 } //close main method 
 	
