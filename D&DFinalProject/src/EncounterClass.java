@@ -33,7 +33,7 @@ public class EncounterClass {
 		Collections.sort(rolledNumbers, Collections.reverseOrder());
 		
 		//sorts the names 
-		Collections.sort(order);
+		Collections.shuffle(order);
 		
 		
 		//does a new for loop to combine the two lists rolled numbers, and order into one list

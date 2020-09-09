@@ -33,8 +33,8 @@ public class JavaAssistantProgram {//Main class to run program
 	//introduction message
 	System.out.println();
 	System.out.println("Welcome to the D&D Assistant program.");
-	System.out.println("Please press 'A' to roll dice and recieve a total.");
-	System.out.println("Please press 'B' to create or see a list of the initative order.");
+	System.out.println("Please press 'A' to roll dice and receive a total.");
+	System.out.println("Please press 'B' to create or see a list of the initiative order.");
 	System.out.println("Please press 'C' to discover a random name for your character.");
 	System.out.println("Or you can type 'Quit' to exit the program.");
 	
